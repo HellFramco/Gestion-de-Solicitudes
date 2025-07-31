@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://back-endsistemadegestiondeproyectos-production.up.railway.app/api/auth/login';
+const API_URL = 'https://kw358s80-5000.use.devtunnels.ms/api/auth/login';
 
 export const login = async (email, password) => {
   try {
@@ -26,7 +26,6 @@ export const login = async (email, password) => {
 };
 
 export const register = async (email, password) => {
-  // Este endpoint es un ejemplo y no funcionará a menos que lo configures
   await axios.post('/api/register', { email, password });
 };
 

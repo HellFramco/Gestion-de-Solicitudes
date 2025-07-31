@@ -13,13 +13,14 @@ Este proyecto es una aplicación web fullstack construida con **React (frontend)
 ## ⚙️ Instrucciones para iniciar el proyecto
 
 Desde la **raíz del proyecto**, ejecuta:
-
 ```bash
 docker-compose up --build
+```
 
 Para detener todos los servicios:
-- docker-compose down
-
+```bash
+docker-compose down
+```
 
 🌐 Acceso desde el navegador
 Una vez iniciado, puedes acceder a las siguientes URLs:
@@ -41,5 +42,7 @@ No necesitas instalar MongoDB localmente.
 
 
 Depuracion
+```bash
 docker-compose down -v --remove-orphans
 docker system prune -f
+```

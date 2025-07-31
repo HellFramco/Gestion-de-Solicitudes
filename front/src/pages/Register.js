@@ -26,7 +26,7 @@ const RegisterPage = () => {
     setIsLoading(true);
     try {
       await axios.post(
-        "https://back-endsistemadegestiondeproyectos-production.up.railway.app/api/auth/register",
+        "https://kw358s80-5000.use.devtunnels.ms/api/auth/register",
         data
       );
       setRegisteredEmail(data.email);
@@ -43,7 +43,7 @@ const RegisterPage = () => {
     setIsLoading(true);
     try {
       await axios.post(
-        "https://back-endsistemadegestiondeproyectos-production.up.railway.app/api/auth/verify",
+        "https://kw358s80-5000.use.devtunnels.ms/api/auth/verify",
         {
           email: registeredEmail,
           code: data.code,
@@ -61,7 +61,7 @@ const RegisterPage = () => {
   const resendVerificationCode = async () => {
     try {
       await axios.post(
-        "https://back-endsistemadegestiondeproyectos-production.up.railway.app/api/auth/resend-code",
+        "https://kw358s80-5000.use.devtunnels.ms/api/auth/resend-code",
         {
           email: registeredEmail,
         }

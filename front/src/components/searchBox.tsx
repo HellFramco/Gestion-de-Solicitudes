@@ -21,7 +21,7 @@ const SearchBox: React.FC<SearchBoxProps> = ({ formData, handleCheckboxChange })
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   const token = localStorage.getItem('token');
-  const API_URL = 'https://back-endsistemadegestiondeproyectos-production.up.railway.app/api/users/getAll';
+  const API_URL = 'https://kw358s80-5000.use.devtunnels.ms/api/users/getAll';
 
   useEffect(() => {
     const fetchData = () => {

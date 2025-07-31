@@ -21,7 +21,7 @@ const ForgotPassword = () => {
     setLoading(true);
     try {
       await axios.post(
-        "https://back-endsistemadegestiondeproyectos-production.up.railway.app/api/auth/password/reset-request",
+        "https://kw358s80-5000.use.devtunnels.ms/api/auth/password/reset-request",
         { email: data.email }
       );
       setEmail(data.email);
@@ -39,7 +39,7 @@ const ForgotPassword = () => {
     setLoading(true);
     try {
       await axios.post(
-        "https://back-endsistemadegestiondeproyectos-production.up.railway.app/api/auth/password/verify-code",
+        "https://kw358s80-5000.use.devtunnels.ms/api/auth/password/verify-code",
         { email, code: data.code }
       );
       setStep("reset");
@@ -61,7 +61,7 @@ const ForgotPassword = () => {
     setLoading(true);
     try {
       await axios.post(
-        "https://back-endsistemadegestiondeproyectos-production.up.railway.app/api/auth/password/reset",
+        "https://kw358s80-5000.use.devtunnels.ms/api/auth/password/reset",
         {
           email,
           code: data.code,
@@ -82,7 +82,7 @@ const ForgotPassword = () => {
     setLoading(true);
     try {
       await axios.post(
-        "https://back-endsistemadegestiondeproyectos-production.up.railway.app/api/auth/password/reset-request",
+        "https://kw358s80-5000.use.devtunnels.ms/api/auth/password/reset-request",
         { email }
       );
       toast.success("Nuevo código enviado a tu email");
