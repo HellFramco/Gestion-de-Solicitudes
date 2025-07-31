@@ -1,18 +1,45 @@
 Gestion de Solicitudes con Reac Node y Docker
 
-En la carpeta esta listo para correr, solo es tener la instancia de docker, la base de datos esta por mongoDB no necesita scripts aparte
+# 📦 Gestión de Solicitudes con React, Node.js y Docker
 
-para iniciar el proyecto 
+Este proyecto es una aplicación web fullstack construida con **React (frontend)**, **Node.js/Express (backend)** y **MongoDB** como base de datos. Toda la arquitectura está contenida y lista para ejecutarse con **Docker**.
 
+## 🚀 Requisitos
 
-Acceso en navegador
-Frontend: http://localhost:3000
-Backend: http://localhost:5000
+- Tener instalados:
+  - [Docker](https://www.docker.com/)
+  - [Docker Compose](https://docs.docker.com/compose/)
 
+## ⚙️ Instrucciones para iniciar el proyecto
 
-Desde la raiz del proyecto
-Para levantar todo:
+Desde la **raíz del proyecto**, ejecuta:
+
+```bash
 docker-compose up --build
 
-Para parar todo
-docker-compose down
+Para detener todos los servicios:
+- docker-compose down
+
+
+🌐 Acceso desde el navegador
+Una vez iniciado, puedes acceder a las siguientes URLs:
+
+🖥️ Frontend: http://localhost:3000
+🛠️ Backend (API): http://localhost:5000
+
+🧩 Base de Datos
+El proyecto usa MongoDB como base de datos.
+Ya está configurado en Docker, por lo que no se necesitan scripts adicionales.
+No necesitas instalar MongoDB localmente.
+
+
+📁 Estructura del Proyecto
+├── backend/             # Servidor Express (Node.js)
+├── frontend/            # Aplicación React
+├── docker-compose.yml   # Orquestador de contenedores
+└── README.md            # Este archivo
+
+
+Depuracion
+docker-compose down -v --remove-orphans
+docker system prune -f
