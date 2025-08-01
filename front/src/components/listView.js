@@ -1,26 +1,8 @@
 import React from 'react';
-import type { FC } from 'react';
 import ActionMenu from './actionMenu';
-import type { ActionMenuProps } from './actionMenu';
 import IconSVG from './icon';
 
-interface ItemType {
-  id: string | number;
-  [key: string]: any;
-}
-
-interface ListViewProps {
-  img?: string;
-  svg: 'IconX' | 'IconBusqueda' | 'IconTipoTarjetas' | 'IconTipoListas' | string; // ajustar si hay más íconos
-  titulo: React.ReactNode;
-  subtitulo: React.ReactNode;
-  parrafo: React.ReactNode;
-  actionMenuProps: (item: ItemType) => ActionMenuProps;
-  toggleMenuActions: (id: ItemType['id']) => void;
-  item: ItemType;
-}
-
-const ListView: FC<ListViewProps> = ({
+const ListView = ({
   img,
   svg,
   titulo,

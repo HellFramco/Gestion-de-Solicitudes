@@ -1,7 +1,8 @@
+// routes/employeeRoutes.js
 import express from "express";
 import {
   getEmployees,
-  getEmployee,
+  getByIdEmployee,
   createEmployee,
   updateEmployee,
   deleteEmployee,
@@ -9,10 +10,10 @@ import {
 
 const router = express.Router();
 
-router.get("/", getEmployees);
-router.get("/:id", getEmployee);
-router.post("/", createEmployee);
-router.put("/:id", updateEmployee);
-router.delete("/:id", deleteEmployee);
+router.get("/getAll", getEmployees);
+router.get("/getById", getByIdEmployee); // Cambiado: obtener por body
+router.post("/create", createEmployee); // Igual
+router.put("/update", updateEmployee); // Cambiado: actualizar por body
+router.delete("/delete", deleteEmployee); // Cambiado: eliminar por body
 
 export default router;

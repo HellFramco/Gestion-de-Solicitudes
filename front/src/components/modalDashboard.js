@@ -1,18 +1,7 @@
 import React from 'react';
-import type { ReactNode } from 'react';
-
 import './../assets/modal.css';
 
-interface ModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  children: ReactNode;
-  widthValue?: string; // Nota: esta prop no se usa en el componente original
-  titulo: string;
-  className?: string;
-}
-
-const Modal: React.FC<ModalProps> = ({
+const Modal = ({
   isOpen,
   onClose,
   children,

@@ -1,20 +1,8 @@
-import type { FC } from 'react';
-import type { ActionMenuProps } from './actionMenu'; // Importación tipo-only
+import React from 'react';
 import ActionMenu from './actionMenu';
 import IconSVG from './icon';
 
-interface CardViewProps {
-  titulo: string;
-  img?: string;
-  svg: 'IconX' | 'IconBusqueda' | 'IconTipoTarjetas' | 'IconTipoListas' | string;
-  subtitulo: string;
-  parrafo: string;
-  item: { id: string | number };
-  toggleMenuActions: (id: string | number) => void;
-  actionMenuProps: (item: { id: string | number }) => ActionMenuProps;
-}
-
-const CardView: FC<CardViewProps> = ({
+const CardView = ({
   titulo,
   img,
   svg,

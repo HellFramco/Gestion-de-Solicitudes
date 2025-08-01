@@ -1,4 +1,4 @@
-const API_URL = 'https://kw358s80-5000.use.devtunnels.ms/api/auth';
+const API_URL = 'http://localhost:5000/api/auth';
 
 export const login = async (email: string, password: string): Promise<string> => {
   console.log('🚀 === INICIO LOGIN FRONTEND ===');

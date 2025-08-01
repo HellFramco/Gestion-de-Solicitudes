@@ -1,4 +1,3 @@
-// controllers/request.controller.js
 import {
   getAllRequestsService,
   getRequestByIdService,
@@ -17,9 +16,9 @@ export const getRequests = async (req, res) => {
   }
 };
 
-export const getRequest = async (req, res) => {
+export const getById = async (req, res) => {
   try {
-    const { id } = req.params;
+    const { id } = req.body;
     const request = await getRequestByIdService(Number(id));
     res.json(request);
   } catch (error) {
@@ -38,8 +37,8 @@ export const createRequest = async (req, res) => {
 
 export const updateRequest = async (req, res) => {
   try {
-    const { id } = req.params;
-    const request = await updateRequestService(Number(id), req.body);
+    const { id, ...updates } = req.body;
+    const request = await updateRequestService(Number(id), updates);
     res.json(request);
   } catch (error) {
     res.status(404).json({ error: error.message });
@@ -48,7 +47,7 @@ export const updateRequest = async (req, res) => {
 
 export const deleteRequest = async (req, res) => {
   try {
-    const { id } = req.params;
+    const { id } = req.body;
     const result = await deleteRequestService(Number(id));
     res.json(result);
   } catch (error) {

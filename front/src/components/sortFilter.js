@@ -1,16 +1,6 @@
 import React from 'react';
 
-interface SortConfig {
-  key: string;
-  direction: 'asc' | 'desc';
-}
-
-interface SortFilterProps {
-  sortConfig: SortConfig;
-  onSortChange: (value: string) => void;
-}
-
-const SortFilter: React.FC<SortFilterProps> = ({ sortConfig, onSortChange }) => {
+const SortFilter = ({ sortConfig, onSortChange }) => {
   return (
     <div className='filtros_ordenar'>
       <span>Ordenar:</span>

@@ -1,17 +1,6 @@
 import React from 'react';
 
-type CheckBoxProps = {
-  icon: string;
-  name: string;
-  value: string | number;
-  userName: string;
-  description: string;
-  checked?: boolean;
-  handleCheckboxChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  colClassName?: string;
-};
-
-const CheckBox: React.FC<CheckBoxProps> = ({
+const CheckBox = ({
   icon,
   name,
   value,

@@ -1,18 +1,7 @@
 import React from 'react';
-import type { ChangeEvent } from 'react';
 import IconSVG from './icon';
 
-interface SeacrhInputProps {
-  type?: string;
-  name?: string;
-  value: string;
-  placeholder?: string;
-  label?: string;
-  colClassName?: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-}
-
-const SeacrhInput: React.FC<SeacrhInputProps> = ({
+const SeacrhInput = ({
   type = 'text',
   name = 'name',
   value,

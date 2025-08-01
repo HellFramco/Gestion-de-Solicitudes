@@ -1,3 +1,4 @@
+// controllers/employeeController.js
 import {
   getAllEmployeesService,
   getEmployeeByIdService,
@@ -16,9 +17,9 @@ export const getEmployees = async (req, res) => {
   }
 };
 
-export const getEmployee = async (req, res) => {
+export const getByIdEmployee = async (req, res) => {
   try {
-    const { id } = req.params;
+    const { id } = req.body;
     const employee = await getEmployeeByIdService(Number(id));
     res.json(employee);
   } catch (error) {
@@ -37,8 +38,8 @@ export const createEmployee = async (req, res) => {
 
 export const updateEmployee = async (req, res) => {
   try {
-    const { id } = req.params;
-    const employee = await updateEmployeeService(Number(id), req.body);
+    const { id, ...updates } = req.body;
+    const employee = await updateEmployeeService(Number(id), updates);
     res.json(employee);
   } catch (error) {
     res.status(404).json({ error: error.message });
@@ -47,7 +48,7 @@ export const updateEmployee = async (req, res) => {
 
 export const deleteEmployee = async (req, res) => {
   try {
-    const { id } = req.params;
+    const { id } = req.body;
     const result = await deleteEmployeeService(Number(id));
     res.json(result);
   } catch (error) {

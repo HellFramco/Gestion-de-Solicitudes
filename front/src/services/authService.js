@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'https://kw358s80-5000.use.devtunnels.ms/api/auth/login';
+//const API_URL = 'http://backend:5000/api/auth/login';
+const API_URL = 'http://localhost:5000/api/auth/login';
 
 export const login = async (email, password) => {
   try {
@@ -14,7 +15,6 @@ export const login = async (email, password) => {
         }
       }
     );
-
     localStorage.setItem('token', response.data.token);
     return response.data.token;
   } catch (error) {
@@ -22,6 +22,7 @@ export const login = async (email, password) => {
       throw new Error(error.response.data.message);
     }
     throw new Error('Error al iniciar sesión');
+    return 'Error al iniciar sesión';
   }
 };
 

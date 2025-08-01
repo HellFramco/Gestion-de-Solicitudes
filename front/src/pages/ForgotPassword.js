@@ -21,7 +21,7 @@ const ForgotPassword = () => {
     setLoading(true);
     try {
       await axios.post(
-        "https://kw358s80-5000.use.devtunnels.ms/api/auth/password/reset-request",
+        "http://localhost:5000/api/auth/password/reset-request",
         { email: data.email }
       );
       setEmail(data.email);
@@ -39,7 +39,7 @@ const ForgotPassword = () => {
     setLoading(true);
     try {
       await axios.post(
-        "https://kw358s80-5000.use.devtunnels.ms/api/auth/password/verify-code",
+        "http://localhost:5000/api/auth/password/verify-code",
         { email, code: data.code }
       );
       setStep("reset");
@@ -61,7 +61,7 @@ const ForgotPassword = () => {
     setLoading(true);
     try {
       await axios.post(
-        "https://kw358s80-5000.use.devtunnels.ms/api/auth/password/reset",
+        "http://localhost:5000/api/auth/password/reset",
         {
           email,
           code: data.code,
@@ -82,7 +82,7 @@ const ForgotPassword = () => {
     setLoading(true);
     try {
       await axios.post(
-        "https://kw358s80-5000.use.devtunnels.ms/api/auth/password/reset-request",
+        "http://localhost:5000/api/auth/password/reset-request",
         { email }
       );
       toast.success("Nuevo código enviado a tu email");

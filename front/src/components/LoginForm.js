@@ -8,11 +8,13 @@ const LoginForm = () => {
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
 
-  const API_URL_PROFILE = 'https://kw358s80-5000.use.devtunnels.ms/api/auth/profile';
+  const API_URL_PROFILE = 'http://localhost:5000/api/auth/profile';
 
   const onSubmit = async (data) => {
     try {
       const token = await login(data.email, data.password);
+
+      console.log(token)
 
       axios
         .get(API_URL_PROFILE, {
@@ -22,6 +24,7 @@ const LoginForm = () => {
           },
         })
         .then((response) => {
+          console.log('✅ Perfil recibido:', response.data);
           const data = response.data;
           localStorage.setItem('user', JSON.stringify(data?.profile || data?.user || data));
           toast.success('Login exitoso');

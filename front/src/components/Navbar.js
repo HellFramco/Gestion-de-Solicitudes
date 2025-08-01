@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const Navbar: React.FC = () => {
-  const [activeMenu, setActiveMenu] = useState<string | null>(null);
-  const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
+const Navbar = () => {
+  const [activeMenu, setActiveMenu] = useState(null);
+  const [activeSubMenu, setActiveSubMenu] = useState(null);
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
 
@@ -14,41 +14,24 @@ const Navbar: React.FC = () => {
     navigate("/login");
   };
 
-  const toggleMenu = (menuName: string) => {
+  const toggleMenu = (menuName) => {
     setActiveMenu(activeMenu === menuName ? null : menuName);
   };
 
-  const toggleSubMenu = (menuName: string) => {
+  const toggleSubMenu = (menuName) => {
     setActiveSubMenu(activeSubMenu === menuName ? null : menuName);
   };
 
-  const handleMenuClick = (title: string) => {
+  const handleMenuClick = (title) => {
     console.log("Menú:", title);
   };
 
   return (
     <ul className="dashboard_menu_items">
       <div className="dashboard_menu_main">
-        {/* PROYECTOS */}
         <li className="dashboard_menu_item_drop">
           <Link
-            to="/dashboard/projects"
-            className={`dashboard_menu_item_content ${
-              activeSubMenu === "item_proyectos" ? "active__item_menu" : ""
-            }`}
-            onClick={() => {
-              toggleSubMenu("item_proyectos");
-              toggleMenu("default_item");
-              handleMenuClick("Proyectos");
-            }}
-          >
-            <span>Proyectos</span>
-          </Link>
-        </li>
-
-        <li className="dashboard_menu_item_drop">
-          <Link
-            to="/dashboard/users"
+            to="/dashboard/emplooyes"
             className={`dashboard_menu_item_content ${
               activeSubMenu === "item_users" ? "active__item_menu" : ""
             }`}
@@ -58,7 +41,7 @@ const Navbar: React.FC = () => {
               handleMenuClick("Usuarios");
             }}
           >
-            <span>Usuarios</span>
+            <span>Empleados</span>
           </Link>
         </li>
 
@@ -78,7 +61,7 @@ const Navbar: React.FC = () => {
           <Link to="/">Política de tratamiento de datos</Link>
         </li>
         <li>
-          <p>© 2025 Daniel Amaya</p>
+          <p>© 2025 Manuel Barrios</p>
         </li>
       </footer>
     </ul>

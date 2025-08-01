@@ -1,20 +1,7 @@
 import { forwardRef } from 'react';
-import type { ChangeEvent, KeyboardEvent } from 'react';
 import IconSVG from './icon';
 
-interface InputDashboardProps {
-  type?: string;
-  name: string;
-  value: string;
-  placeholder?: string;
-  label?: string;
-  colClassName?: string;
-  icon?: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  onKeyDown?: (e: KeyboardEvent<HTMLInputElement>) => void;
-}
-
-const InputDashboard = forwardRef<HTMLInputElement, InputDashboardProps>(({
+const InputDashboard = forwardRef(({
   type = 'text',
   name,
   value,

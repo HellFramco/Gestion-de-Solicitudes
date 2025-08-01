@@ -1,27 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import IconSVG from './icon';
 
-export type IconName = string;
-
-export interface Action {
-  label: string;
-  icon: IconName;
-  onClick: () => void;
-  className?: string;
-}
-
-export interface ActionMenuProps {
-  actions: Action[];
-  isActive: boolean;
-  onClose: () => void;
-}
-
-const ActionMenu: React.FC<ActionMenuProps> = ({ actions, isActive, onClose }) => {
-  const menuRef = useRef<HTMLUListElement>(null);
+const ActionMenu = ({ actions, isActive, onClose }) => {
+  const menuRef = useRef(null);
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
         onClose();
       }
     };

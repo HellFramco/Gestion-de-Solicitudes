@@ -1,27 +1,15 @@
-import { forwardRef } from 'react';
-import type { ChangeEvent, ForwardedRef } from 'react';
+import React, { forwardRef } from 'react';
 import IconSVG from './icon';
 
-// Definimos las props con un tipo TypeScript
-interface TextareaDashboardProps {
-  name: string;
-  value: string;
-  placeholder?: string;
-  label?: string;
-  colClassName?: string;
-  onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
-  icon?: string;
-}
-
-const TextareaDashboard = forwardRef<HTMLTextAreaElement, TextareaDashboardProps>(({
+const TextareaDashboard = forwardRef(({
   name,
   value,
   placeholder = 'nombre',
   label = 'Nombre',
   colClassName = '',
   onChange,
-  icon,
-}, ref: ForwardedRef<HTMLTextAreaElement>) => {
+  icon
+}, ref) => {
   return (
     <div className={`input_dashboard ${colClassName}`}>
       <label htmlFor={name}>{label}</label>

@@ -1,14 +1,10 @@
 import { useForm } from 'react-hook-form';
 import { forgotPassword } from '../services/authService';
 
-type ForgotPasswordData = {
-  email: string;
-};
-
 const ForgotPasswordForm = () => {
-  const { register, handleSubmit } = useForm<ForgotPasswordData>();
+  const { register, handleSubmit } = useForm();
 
-  const onSubmit = async (data: ForgotPasswordData) => {
+  const onSubmit = async (data) => {
     try {
       await forgotPassword(data.email);
       alert('Correo de recuperación enviado');

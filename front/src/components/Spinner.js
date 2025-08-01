@@ -1,5 +1,5 @@
 import React from 'react';
-import './spinner.css'; // Puedes personalizar este estilo
+import '../assets/spinner.css';
 
 const Spinner = () => (
   <div className="spinner-container">

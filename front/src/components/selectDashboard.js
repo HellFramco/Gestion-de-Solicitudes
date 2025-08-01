@@ -1,23 +1,7 @@
 import React, { forwardRef } from 'react';
 import IconSVG from './icon';
 
-type Option = {
-  key: string | number;
-  value: string;
-};
-
-type SelectDashboardProps = {
-  label: string;
-  name: string;
-  options: Option[]; // <- NUEVA prop
-  onSelectChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
-  defaultOption: string;
-  value: string | number;
-  className?: string;
-  icon: string;
-};
-
-const SelectDashboard = forwardRef<HTMLSelectElement, SelectDashboardProps>(({
+const SelectDashboard = forwardRef(({
   label,
   name,
   options,

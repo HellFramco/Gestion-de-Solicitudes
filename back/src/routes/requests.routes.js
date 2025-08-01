@@ -1,8 +1,7 @@
-// routes/request.routes.js
 import express from "express";
 import {
   getRequests,
-  getRequest,
+  getById,
   createRequest,
   updateRequest,
   deleteRequest,
@@ -10,10 +9,10 @@ import {
 
 const router = express.Router();
 
-router.get("/", getRequests);
-router.get("/:id", getRequest);
-router.post("/", createRequest);
-router.put("/:id", updateRequest);
-router.delete("/:id", deleteRequest);
+router.get("/getAll", getRequests);
+router.get("/getById", getById); // Cambiado: buscar uno desde el body
+router.post("/create", createRequest);
+router.put("/update", updateRequest); // Cambiado: actualizar desde el body
+router.delete("/delete", deleteRequest); // Cambiado: eliminar desde el body
 
 export default router;

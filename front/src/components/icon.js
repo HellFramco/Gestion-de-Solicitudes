@@ -1,5 +1,4 @@
 import React from 'react';
-import type { SVGProps } from 'react';
 
 // BIBLIOTECA DE ICONOS SVG
 const icons = {
@@ -100,19 +99,12 @@ const icons = {
         <circle cx="50" cy="79.74" r="7.37"/>
         </svg>
     ),
-
 };
 
-type IconName = string;
-
-interface IconProps extends SVGProps<SVGSVGElement> {
-  name: IconName;
-}
-
-const Icon: React.FC<IconProps> = ({ name, ...props }) => {
+const Icon = ({ name, ...props }) => {
   if (!(name in icons)) return null;
 
-  const IconComponent = icons[name as keyof typeof icons];
+  const IconComponent = icons[name];
   return React.cloneElement(IconComponent, props);
 };
 
